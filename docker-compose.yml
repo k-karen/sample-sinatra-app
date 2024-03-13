@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: bash -c "bundle; bundle exec rerun ruby app.rb"
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "4567:4567"
+    tty: true
